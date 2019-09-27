@@ -2,7 +2,7 @@ package gpk.designpatterns;
 
 import java.io.PrintStream;
 
-public abstract class CommonLogger {
+public class CommonLogger {
     public enum LogLevel {
         LOG_MSG, LOG_WARNING, LOG_ERROR
     }

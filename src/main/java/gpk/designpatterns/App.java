@@ -11,7 +11,8 @@ public class App {
         ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
 
         IExampleRunner exampleRunner =
-                context.getBean(gpk.designpatterns.builder.Runner.class);
+                // context.getBean(gpk.designpatterns.builder.Builderrunner.class);
+                context.getBean(gpk.designpatterns.decorator.DecoratorRunner.class);
 
         exampleRunner.run();
     }
