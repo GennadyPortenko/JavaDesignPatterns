@@ -12,10 +12,10 @@ public class FactoryRunner implements IExampleRunner {
     public void run() {
         try {
             ILogger simpleLogger = LoggerFactory.getLogger("simple");
-            simpleLogger.log("It's me, Simple Logger!", ILogger.LogLevel.LOG_ERROR);
+            simpleLogger.log("It's me, Simple Logger1!", ILogger.LogLevel.LOG_ERROR);
 
             ILogger improvedLogger = LoggerFactory.getLogger("improved");
-            improvedLogger.log("It's me, Improved Logger!", ILogger.LogLevel.LOG_ERROR);
+            improvedLogger.log("It's me, Improved Logger1!", ILogger.LogLevel.LOG_ERROR);
         } catch(Exception e) {
             e.printStackTrace();
         }
