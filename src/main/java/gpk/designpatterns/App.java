@@ -14,7 +14,8 @@ public class App {
         IExampleRunner exampleRunner =
                 // context.getBean(BuilderRunner.class);
                 // context.getBean(gpk.designpatterns.decorator.DecoratorRunner.class);
-                context.getBean(gpk.designpatterns.abstractfactory.AbstractFactoryRunner.class);
+                // context.getBean(gpk.designpatterns.abstractfactory.AbstractFactoryRunner.class);
+                context.getBean(gpk.designpatterns.factory.FactoryRunner.class);
 
         exampleRunner.run();
     }
