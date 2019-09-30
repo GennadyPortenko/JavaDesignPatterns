@@ -1,6 +1,7 @@
 package gpk.designpatterns;
 
 
+import gpk.designpatterns.builder.BuilderRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -11,8 +12,9 @@ public class App {
         ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
 
         IExampleRunner exampleRunner =
-                // context.getBean(gpk.designpatterns.builder.Builderrunner.class);
-                context.getBean(gpk.designpatterns.decorator.DecoratorRunner.class);
+                // context.getBean(BuilderRunner.class);
+                // context.getBean(gpk.designpatterns.decorator.DecoratorRunner.class);
+                context.getBean(gpk.designpatterns.abstractfactory.AbstractFactoryRunner.class);
 
         exampleRunner.run();
     }
