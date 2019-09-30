@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class DecoratorRunner implements IExampleRunner {
     public void run() {
         LoggerUpperCaseDecorator logger = new LoggerUpperCaseDecorator();
-        logger.logUpperCase("It's me!");
+        logger.logUpperCase("It's me, Decorator!");
     }
 }
 

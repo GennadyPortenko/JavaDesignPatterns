@@ -5,25 +5,25 @@ import gpk.designpatterns.ILogger;
 import java.io.PrintStream;
 
 public class Logger implements ILogger {
-
-    public enum LogLevel {
-        LOG_MSG, LOG_WARNING, LOG_ERROR
-    }
-
     private String name = "Default";
-    private LogLevel logLevel = LogLevel.LOG_MSG;
+    private ILogger.LogLevel defaultLogLevel = ILogger.LogLevel.LOG_NOTICE;
 
     public void setName(String name) {
         this.name = name;
     }
-    public void setLogLevel(LogLevel logLevel) {
-        this.logLevel = logLevel;
+    public void setDefaultLogLevel(ILogger.LogLevel defaultLogLevel) {
+        this.defaultLogLevel = defaultLogLevel;
+    }
+
+    @Override
+    public void log(String message, LogLevel logLevel) {
+        PrintStream out = (logLevel == ILogger.LogLevel.LOG_ERROR) ? System.err : System.out;
+        out.println(this.name + " [" + this.defaultLogLevel.toString() + "] - " + message);
     }
 
     @Override
     public void log(String message) {
-        PrintStream out = (logLevel == LogLevel.LOG_ERROR) ? System.err : System.out;
-        out.println(this.name + " [" + this.logLevel.toString() + "] - " + message);
+        log(message, defaultLogLevel);
     }
 
     public static LoggerBuilder builder() {
@@ -32,7 +32,7 @@ public class Logger implements ILogger {
 
     public static class LoggerBuilder {
         private String name = "Default";
-        private LogLevel logLevel = LogLevel.LOG_MSG;
+        private ILogger.LogLevel logLevel = ILogger.LogLevel.LOG_NOTICE;
 
         private LoggerBuilder() {
         }
@@ -41,7 +41,7 @@ public class Logger implements ILogger {
             this.name = name;
             return this;
         }
-        public LoggerBuilder logLevel(LogLevel logLevel) {
+        public LoggerBuilder defaultLogLevel(ILogger.LogLevel logLevel) {
             this.logLevel = logLevel;
             return this;
         }
@@ -49,7 +49,7 @@ public class Logger implements ILogger {
         public Logger build() {
             Logger logger = new Logger();
             logger.setName(this.name);
-            logger.setLogLevel(this.logLevel);
+            logger.setDefaultLogLevel(this.logLevel);
             return logger;
         }
     }

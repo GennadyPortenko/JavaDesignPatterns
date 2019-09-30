@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")
-public class Builderrunner implements IExampleRunner {
+public class BuilderRunner implements IExampleRunner {
     public void run() {
-       Logger logger = Logger.builder().name("My Application").logLevel(Logger.LogLevel.LOG_ERROR).build();
-       logger.log("It's me!");
+       Logger logger = Logger.builder().name("My Application").defaultLogLevel(Logger.LogLevel.LOG_ERROR).build();
+       logger.log("It's me, Builder exapmle!");
     }
 }
