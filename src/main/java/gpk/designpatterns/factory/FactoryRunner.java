@@ -3,8 +3,6 @@ package gpk.designpatterns.factory;
 
 import gpk.designpatterns.IExampleRunner;
 import gpk.designpatterns.ILogger;
-import gpk.designpatterns.abstractfactory.AbstractLoggerFactory;
-import gpk.designpatterns.abstractfactory.LoggerFactoryProvider;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
