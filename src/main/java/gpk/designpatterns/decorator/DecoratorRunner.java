@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class DecoratorRunner implements IExampleRunner {
     public void run() {
-        LoggerUpperCaseDecorator logger = new LoggerUpperCaseDecorator();
-        logger.logUpperCase("It's me, Decorator!");
+        LoggerUpperCaseDecorator loggerUpperCase = new LoggerUpperCaseDecorator();
+        loggerUpperCase.log("It's me, Decorator!");
     }
 }
 

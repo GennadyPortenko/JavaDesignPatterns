@@ -1,9 +1,11 @@
 package gpk.designpatterns.decorator;
 
-public class LoggerUpperCaseDecorator {
+import gpk.designpatterns.ILogger;
+
+public class LoggerUpperCaseDecorator implements ILogger {
     private Logger logger = new Logger();
 
-    public void logUpperCase(String message) {
-        logger.log(message.toUpperCase());
+    public void log(String message, LogLevel logLevel) {
+        logger.log(message.toUpperCase(), logLevel);
     }
 }
