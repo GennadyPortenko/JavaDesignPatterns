@@ -1,14 +1,13 @@
 package gpk.designpatterns.facade;
 
 
-import gpk.designpatterns.IExampleRunner;
 import gpk.designpatterns.ILogger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")
-public class FacadeRunner implements IExampleRunner {
+public class FacadeRunner implements Runnable {
     public void run() {
         LoggerFacade logger1 = new LoggerFacade(Logger1.class);
         logger1.log("Notice from Logger1", ILogger.LogLevel.LOG_NOTICE);

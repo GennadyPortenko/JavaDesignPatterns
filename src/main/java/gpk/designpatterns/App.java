@@ -10,7 +10,7 @@ public class App {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
 
-        IExampleRunner exampleRunner =
+        Runnable exampleRunner =
                 // context.getBean(BuilderRunner.class);
                 // context.getBean(gpk.designpatterns.decorator.DecoratorRunner.class);
                 // context.getBean(gpk.designpatterns.abstractfactory.AbstractFactoryRunner.class);

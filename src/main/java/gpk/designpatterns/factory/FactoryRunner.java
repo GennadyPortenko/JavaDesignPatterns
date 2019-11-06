@@ -1,14 +1,13 @@
 package gpk.designpatterns.factory;
 
 
-import gpk.designpatterns.IExampleRunner;
 import gpk.designpatterns.ILogger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")
-public class FactoryRunner implements IExampleRunner {
+public class FactoryRunner implements Runnable {
     public void run() {
         try {
             ILogger simpleLogger = LoggerFactory.getLogger("simple");

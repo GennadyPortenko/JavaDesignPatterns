@@ -1,6 +1,5 @@
 package gpk.designpatterns.proxy;
 
-import gpk.designpatterns.IExampleRunner;
 import gpk.designpatterns.ILogger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -9,7 +8,7 @@ import java.lang.reflect.*;
 
 @Component
 @Scope("prototype")
-public class ProxyRunner implements IExampleRunner {
+public class ProxyRunner implements Runnable {
     public void run() {
         ILogger logger = new Logger();
         logger.log("It's me, Logger!");
