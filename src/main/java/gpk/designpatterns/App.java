@@ -17,7 +17,8 @@ public class App {
                 // context.getBean(gpk.designpatterns.factory.FactoryRunner.class);
                 // context.getBean(gpk.designpatterns.proxy.ProxyRunner.class);
                 // context.getBean(gpk.designpatterns.facade.FacadeRunner.class);
-                context.getBean(gpk.designpatterns.strategy.StrategyRunner.class);
+                // context.getBean(gpk.designpatterns.strategy.StrategyRunner.class);
+                context.getBean(gpk.designpatterns.singleton.SingletonRunner.class);
 
 
         exampleRunner.run();
